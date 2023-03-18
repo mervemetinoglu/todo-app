@@ -1,0 +1,24 @@
+:root {
+  --toastify-font-family: 'Mynerve', cursive;
+}
+
+.Toastify__toast {
+  color: #eca869;
+  background: #f5f5dc;
+}
+
+.Toastify__progress-bar--success {
+  background: linear-gradient(
+    90deg,
+    rgba(171, 159, 0, 1) 0%,
+    rgba(255, 237, 0, 1) 100%
+  );
+}
+
+.Toastify__progress-bar--error {
+  background: linear-gradient(
+    90deg,
+    rgba(56, 8, 56, 1) 0%,
+    rgba(128, 0, 128, 1) 100%
+  );
+}
