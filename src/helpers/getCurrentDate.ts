@@ -1,22 +1,16 @@
 import dayjs from 'dayjs';
-
-const days = [
-  'Sunday',
-  'Monday',
-  'Tuesday',
-  'Wednesday',
-  'Thursday',
-  'Friday',
-  'Saturday',
-];
+import { days } from '@/constants/days';
 
 export const getCurrentDateAndDay = () => {
   const date = dayjs();
+
+  const currentDate = date.format('MMM D, YYYY');
+
   const dayIdx = date.day();
-  const day = date.format('MMM D, YYYY');
+  const currentDay = days[dayIdx];
 
   return {
-    currentDate: day,
-    currentDay: days[dayIdx - 1],
+    currentDay,
+    currentDate,
   };
 };
