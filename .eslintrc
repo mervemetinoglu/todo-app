@@ -8,8 +8,9 @@
         "no-console": "warn",
         "react/display-name": "off",
         "react/react-in-jsx-scope": "off",
-        "@typescript-eslint/no-unsafe-assignment": "off",
-        "@typescript-eslint/no-unused-vars": "warn"
+        "jsx-a11y/prefer-tag-over-role": "off",
+        "@typescript-eslint/no-unused-vars": "warn",
+        "@typescript-eslint/no-unsafe-assignment": "off"
     },
     "parserOptions": {
         "project": "./tsconfig.json"
