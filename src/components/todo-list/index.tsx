@@ -2,7 +2,11 @@ import { List } from '@mui/material';
 import useSWR from 'swr';
 import produce from 'immer';
 import { useCallback } from 'react';
-import { TodoListItem, TodoListItemSkeleton } from './components';
+import {
+  TodoListItem,
+  TodoListItemSkeleton,
+  EmptyTodoListMessage,
+} from './components';
 import { ITodo } from '@/api/models/todos.model';
 import { deleteTodo, updateTodo } from '@/api/services/todos.service';
 import { ID_PREFIX } from '@/constants/dummyIdPrefix';
@@ -10,6 +14,8 @@ import { customToastError, customToastSuccess } from '@/helpers/toast';
 
 export const TodoList = () => {
   const { data: todos, mutate, isLoading } = useSWR<ITodo[]>('todos');
+
+  const isEmptyData = !todos || todos.length === 0;
 
   const onDeleteHandler = async (id: string) => {
     if (!todos) return;
@@ -93,20 +99,24 @@ export const TodoList = () => {
         overflowY: 'auto',
       }}
     >
-      {isLoading
-        ? Array(4)
-            .fill(0)
-            .map((_, index) => <TodoListItemSkeleton key={index} />)
-        : todos?.map((todo) => {
-            return (
-              <TodoListItem
-                todo={todo}
-                key={todo.id}
-                onClickDelete={() => onDeleteHandler(todo.id)}
-                onClickToggle={() => onToggleHandler(todo.id)}
-              />
-            );
-          })}
+      {isLoading ? (
+        Array(4)
+          .fill(0)
+          .map((_, index) => <TodoListItemSkeleton key={index} />)
+      ) : isEmptyData ? (
+        <EmptyTodoListMessage />
+      ) : (
+        todos.map((todo) => {
+          return (
+            <TodoListItem
+              todo={todo}
+              key={todo.id}
+              onClickDelete={() => onDeleteHandler(todo.id)}
+              onClickToggle={() => onToggleHandler(todo.id)}
+            />
+          );
+        })
+      )}
     </List>
   );
 };
