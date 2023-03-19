@@ -3,6 +3,7 @@ import { SWRConfig } from 'swr';
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider } from '@mui/material/styles';
 import { swrConfig } from './configs/swrConfigs';
+import 'react-toastify/dist/ReactToastify.css';
 
 import App from './App';
 
