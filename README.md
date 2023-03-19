@@ -1,4 +1,6 @@
-# ToDo App
+# Todo App
+
+Todo App is a simple todo app built with React, TypeScript and MUI.
 
 ## How To Use
 
@@ -14,6 +16,9 @@ $ cd todo-app
 # Install dependencies
 $ yarn install
 
+# Run the server
+$ yarn mockoon-start
+
 # Run the app
 $ yarn start
 ```
@@ -22,6 +27,9 @@ $ yarn start
 
 This software uses the following packages:
 
+- [mockoon](https://mockoon.com/) - Mock API
+
+- [Create React App](https://create-react-app.dev/) :wave:
 - [React](https://beta.reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [MUI](https://mui.com/)
@@ -32,3 +40,9 @@ This software uses the following packages:
 - [react-icons](https://react-icons.github.io/react-icons/icons?name=fa)
 - [React-toastify](https://fkhadra.github.io/react-toastify/introduction)
 - [SWR](https://swr.vercel.app/)
+
+### Todos
+
+- [ ] Migrate to Vite
+- [ ] Responsive Design
+- [ ] Add Tests

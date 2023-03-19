@@ -1,0 +1,110 @@
+{
+  "uuid": "a0397b05-b747-464b-9506-09d3546def20",
+  "lastMigration": 27,
+  "name": "API",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 8000,
+  "hostname": "",
+  "folders": [],
+  "routes": [
+    {
+      "uuid": "e4a98f28-2745-49a4-8577-99c2ebc193f4",
+      "type": "crud",
+      "documentation": "",
+      "method": "",
+      "endpoint": "todos",
+      "responses": [
+        {
+          "uuid": "4ab9f823-fd1a-4ef4-b530-3c7dd9151081",
+          "body": "{}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "",
+              "value": ""
+            }
+          ],
+          "bodyType": "DATABUCKET",
+          "filePath": "",
+          "databucketID": "1bst",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    }
+  ],
+  "rootChildren": [
+    {
+      "type": "route",
+      "uuid": "e4a98f28-2745-49a4-8577-99c2ebc193f4"
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    },
+    {
+      "key": "Access-Control-Allow-Origin",
+      "value": "*"
+    },
+    {
+      "key": "Access-Control-Allow-Methods",
+      "value": "GET,POST,PUT,PATCH,DELETE,HEAD,OPTIONS"
+    },
+    {
+      "key": "Access-Control-Allow-Headers",
+      "value": "Content-Type, Origin, Accept, Authorization, Content-Length, X-Requested-With"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "data": [
+    {
+      "uuid": "559ed67d-8f65-4a1f-8816-0304a7694c4a",
+      "id": "41gf",
+      "name": "Users",
+      "documentation": "",
+      "value": "[\n  {{#repeat 50}}\n  {\n    \"id\": \"{{faker 'datatype.uuid'}}\",\n    \"username\": \"{{faker 'internet.userName'}}\"\n  }\n  {{/repeat}}\n]"
+    },
+    {
+      "uuid": "8db262dc-ac38-42db-b4b1-1f0cd2ac53d2",
+      "id": "1bst",
+      "name": "Todos",
+      "documentation": "",
+      "value": "\r\n [\r\n    {\r\n      \"id\": \"1\",\r\n      \"todo\": \"Buy milk\",\r\n      \"isCompleted\": true\r\n    },\r\n    {\r\n      \"id\": \"2\",\r\n      \"todo\": \"Do laundry\",\r\n      \"isCompleted\": true\r\n    },\r\n    {\r\n      \"id\": \"3\",\r\n      \"todo\": \"take out the trash\",\r\n      \"isCompleted\": false\r\n    }\r\n  ]\r\n"
+    }
+  ]
+}

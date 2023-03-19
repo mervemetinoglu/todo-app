@@ -5,6 +5,7 @@
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
+    "@mockoon/cli": "^2.4.0",
     "@mui/icons-material": "^5.11.11",
     "@mui/material": "^5.11.13",
     "@types/node": "^16.7.13",
@@ -26,7 +27,9 @@
     "start": "craco start",
     "build": "craco build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "mockoon-start": "npx mockoon-cli start --data ./mockoon.json",
+    "mockoon-stop": "npx mockoon-cli stop 0"
   },
   "eslintConfig": {
     "extends": [
